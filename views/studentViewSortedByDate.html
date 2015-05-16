@@ -1,11 +1,12 @@
+<h1 class="page-header">Date</h1>
 
           <div class="row placeholders">
-              
-            <div ng-repeat="homework in homeworks" class="col-xs-6 col-sm-3 ">
-              <img class="img-responsive" alt="200x200" ng-src="{{homework.image}}" data-holder-rendered="true">
-              <h4>{{homework.title}}</h4>
-              <span class="text-muted">{{homework.description}}</span>
-                
-            </div>
-              
+            <a href="http://google.com" ng-repeat="homework in homeworks" >
+                <div class="col-xs-6 col-sm-3 ">
+                  <img class="img-responsive" alt="200x200" ng-src="{{homework.image}}" data-holder-rendered="true">
+                  <h4>{{homework.title}}</h4>
+                  <span class="text-muted">{{homework.description}}</span>
+
+                </div>
+            </a> 
           </div>

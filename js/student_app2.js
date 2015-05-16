@@ -1,35 +1,51 @@
-var app = angular.module('studentViewApp', ['ngRoute'])
+var app = angular.module('studentViewApp', ['ui.router'])
 
-//define routes for the app, each route defines a template and a controller
-app.config(['$routeProvider', function($routeProvider){
-  $routeProvider
-    .when('/', {
-      templateUrl : 'views/studentViewSortedByDate.html',
-      controller  : 'StudentViewController'
+app.config(function($stateProvider, $urlRouterProvider){
+
+  // For any unmatched url, send to /route1
+  $urlRouterProvider.otherwise("/studenthome/studentDate")
+
+  $stateProvider
+    
+    .state('studenthome', {
+        url: "/studenthome",
+        templateUrl: "views/home.html"
     })
-    .when('/studentDate', {
-      templateUrl : 'views/studentViewSortedByDate.html',
-      controller  : 'StudentViewController'
+    .state('studenthome.studentDate', {
+          url: "/studentDate",
+          templateUrl: "views/studentViewSortedByDate.html",
+          controller: 'StudentViewController'
+      })
+    .state('studenthome.studentSubject', {
+          url: "/studentSubject",
+          templateUrl: "views/studentViewBySubject.html",
+          controller: 'StudentViewController'
+      })  
+  
+    .state('route1', {
+        url: "/route1",
+        templateUrl: "route1.html"
     })
-    .when('/studentSubject', {
-      templateUrl : 'views/studentViewBySubject.html',
-      controller  : 'StudentViewController'
+      .state('route1.list', {
+          url: "/list",
+          templateUrl: "route1.list.html",
+          controller: function($scope){
+            $scope.items = ["A", "List", "Of", "Items"];
+          }
+      })
+
+    .state('route2', {
+        url: "/route2",
+        templateUrl: "route2.html"
     })
-    .otherwise({
-      redirectTo: '/'
-    });
-//    $routeProvider
-//        // HOME STATES AND NESTED VIEWS ========================================
-//        .state('home', {
-//            url: '/home',
-//            templateUrl: 'partial-home.html'
-//        })
-//        
-//        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-//        .state('about', {
-//            // we'll get to this in a bit       
-//        });
-}]);
+      .state('route2.list', {
+          url: "/list",
+          templateUrl: "route2.list.html",
+          controller: function($scope){
+            $scope.things = ["A", "Set", "Of", "Things"];
+          }
+      })
+})
 
 app.controller('StudentViewController', ['$scope', function($scope) {
   $scope.homeworks = [

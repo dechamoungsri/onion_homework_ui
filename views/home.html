@@ -1,0 +1,27 @@
+
+      <div class="row">
+          
+        <!--  Master Here-->
+          
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+<!--            <li class="active">-->
+            <li>
+<!--                <a href="#studentDate">By due date</a>-->
+                <a ui-sref=".studentDate">By due date</a>
+              </li>
+            <li>
+<!--                <a href="#studentSubject">By subject</a>-->
+                <a ui-sref=".studentSubject">By subject</a>
+              </li>
+              <li><a href="#studentSubject">Kuy</a></li>
+          </ul>
+        </div>
+          
+<!--        Detail Here-->
+        
+        <div ng-controller="StudentViewController" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">  
+            <div class="container" ui-view></div>
+
+        </div>
+      </div>
