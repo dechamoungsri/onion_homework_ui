@@ -4,9 +4,13 @@ app.config(function($stateProvider, $urlRouterProvider){
 
   // For any unmatched url, send to /route1
   $urlRouterProvider.otherwise("/studenthome/studentDate")
+  //$urlRouterProvider.otherwise("/dohomework")
 
   $stateProvider
-    
+//    .state('dohomework'), {
+//        url: "/dohomework",
+//        templateUrl: "route1.html"
+//    }
     .state('studenthome', {
         url: "/studenthome",
         templateUrl: "views/home.html"
@@ -21,62 +25,75 @@ app.config(function($stateProvider, $urlRouterProvider){
           templateUrl: "views/studentViewBySubject.html",
           controller: 'StudentViewController'
       })  
-  
-    .state('route1', {
-        url: "/route1",
-        templateUrl: "route1.html"
+    .state('dohomework', {
+        url: "/dohomework",
+        templateUrl: "views/dohomework.html",
+        controller: 'questionViewController'
     })
-      .state('route1.list', {
-          url: "/list",
-          templateUrl: "route1.list.html",
-          controller: function($scope){
-            $scope.items = ["A", "List", "Of", "Items"];
-          }
-      })
+    .state('dohomework.questionId', {
+        url: "/questionId/:itemId",
+        templateUrl: "views/questionIdView.html",
+        controller: 'questionWithIDViewController'
+    })
 
-    .state('route2', {
-        url: "/route2",
-        templateUrl: "route2.html"
-    })
-      .state('route2.list', {
-          url: "/list",
-          templateUrl: "route2.list.html",
-          controller: function($scope){
-            $scope.things = ["A", "Set", "Of", "Things"];
-          }
-      })
 })
+
+app.controller('questionWithIDViewController', ['$scope', function($scope,  $state, $stateParams) {
+  $scope.questions = [
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+  ]
+  
+  if($stateParams.itemId) {
+    console.log($stateParams.itemId);
+  }
+
+
+}]);
+
+app.controller('questionViewController', ['$scope', function($scope,  $state, $stateParams) {
+  $scope.questions = [
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+  ]
+  //console.log($stateParams.qid);
+
+}]);
 
 app.controller('StudentViewController', ['$scope', function($scope) {
   $scope.homeworks = [
       {
-        title: 'Homework A',
-        description: 'Gay Day',
+        question_id: 123, title: 'Homework A',
+        description: 'Pipat is Gay',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
     {
-        title: 'Homework B',
-        description: 'Gay Day',
+        question_id: 123, title: 'Homework B',
+        description: 'Pipat is Gay',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
     {
-        title: 'Homework C',
-        description: 'Gay Day',
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
         {
-        title: 'Homework D',
-        description: 'Gay Day',
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
         {
-        title: 'Homework E',
-        description: 'Gay Day',
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
         {
-        title: 'Homework F',
-        description: 'Gay Day',
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
   ];
@@ -86,18 +103,18 @@ app.controller('StudentViewController', ['$scope', function($scope) {
         title: 'Math', 
         homeworks: [
           {
-            title: 'Homework A',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework A',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
-            title: 'Homework B',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework B',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
-            title: 'Homework C',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework C',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           }
         ]
@@ -106,18 +123,18 @@ app.controller('StudentViewController', ['$scope', function($scope) {
         title: 'Chem', 
         homeworks: [
           {
-            title: 'Homework D',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework D',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
-            title: 'Homework E',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework E',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
-            title: 'Homework F',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework F',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           }
         ]
@@ -126,18 +143,18 @@ app.controller('StudentViewController', ['$scope', function($scope) {
         title: 'Phys', 
         homeworks: [
           {
-            title: 'Homework G',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework G',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
-            title: 'Homework H',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework H',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
-            title: 'Homework I',
-            description: 'Gay Day',
+            question_id: 123, title: 'Homework I',
+            description: 'Pipat is Gay',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           }
         ]

@@ -1,4 +1,24 @@
-<h1>Route 1</h1>
-<hr/>
-<a ui-sref=".list">Show List</a>
-<div ui-view></div>
+<!--
+<p>hfjkadsjfdskhsadkhjfkj</p>
+
+
+-->
+
+      <div class="row">
+          
+        <div class="col-sm-3 col-md-2 sidebar">
+        <p>Question X</p>
+          <ul class="nav nav-sidebar" ng-repeat="question in questions">
+            <li>
+<!--                <a ui-sref=".studentDate">By due date</a>-->
+                <p>Question {{question.question_id}}</p>
+              </li>
+              
+          </ul>
+        </div>
+          
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">  
+            <div class="container" ui-view></div>
+        </div>
+          
+      </div>
