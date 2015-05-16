@@ -1,9 +1,12 @@
 <div ng-controller="TeacherViewController" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2 main">  
 
-    <a ui-sref="createhomework.questionnumber({questionId:0})">
-        <input type="button" id="createNewHomeWork" class="btn btn-warning" value="Assign New Homework" ></input>
-    </a>
-
+    <div class="row">
+        <div style="float: right;">
+            <a ui-sref="createhomework.questionnumber({questionId:0})">
+                <input type="button" id="createNewHomeWork" class="btn btn-primary" value="Create New Homework" ></input>
+            </a>
+        </div>
+    </div>
     <div class="row">
         <h1>Grading Pending</h1>
         <hr />
