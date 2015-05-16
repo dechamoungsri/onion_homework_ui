@@ -3,7 +3,7 @@ var app = angular.module('studentViewApp', ['ui.router']);
 app.config(function($stateProvider, $urlRouterProvider){
 
   // For any unmatched url, send to /route1
-  $urlRouterProvider.otherwise("/studenthome/studentDate")
+  $urlRouterProvider.otherwise("/teacherhome/dashboard")
   //$urlRouterProvider.otherwise("/dohomework")
 
   $stateProvider
@@ -11,6 +11,36 @@ app.config(function($stateProvider, $urlRouterProvider){
 //        url: "/dohomework",
 //        templateUrl: "route1.html"
 //    }
+  
+    .state('teacherhome', {
+        url: "/teacherhome",
+        templateUrl: "views/homeTeacher.html",
+        controller: "TeacherViewController"
+    })
+    .state('teacherhome.dashboard', {
+        url: "/dashboard",
+        templateUrl: "views/teacherDashboard.html",
+        controller: "TeacherViewController"
+    })
+  
+    .state('createhomework', {
+        url: "/createhomework",
+        templateUrl: "views/teacherCreateHomeWork.html",
+        controller: "CreateHomeworkViewController"
+    })
+    .state('createhomework.questionnumber', {
+        url: "/questionnumber/:questionId",
+        templateUrl: "views/teacherQuestionEdit.html",
+        controller: "CreateHomeworkViewController"
+    })
+    .state('createhomework.addnewquestion', {
+        url: "/createhomework/addnewquestion",
+        templateUrl: "views/teacherCreateHomeWork.html",
+        controller: "CreateHomeworkViewController"
+    })
+  
+  
+  // Student View Call here
     .state('studenthome', {
         url: "/studenthome",
         templateUrl: "views/home.html"
@@ -42,6 +72,154 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 });
 
+app.controller('CreateHomeworkViewByIdController', ['$scope', function($scope,  $state, $stateParams) {
+  $scope.questions = [
+      {question_id: 1, title: 'Homework A', question_text: 'What is it?'},
+      {question_id: 2, title: 'Homework A', question_text: 'What is that?'},
+      {question_id: 3, title: 'Homework A', question_text: 'What there?'},
+      {question_id: 4, title: 'Homework A', question_text: 'What those?'},
+  ];
+    
+  $scope.questionText = 'Oh Yeahhhhhhh!!!'
+    
+  $scope.newQuestion = function() {
+    $scope.questions.push({
+        question_id: 5, title: 'Homework A', question_text: $scope.questionText
+    });
+  };
+
+  $scope.textChange = function() {
+    
+  }
+    
+  //console.log($stateParams.qid);
+
+}]);
+
+app.controller('CreateHomeworkViewController', ['$scope', function($scope,  $state, $stateParams) {
+  $scope.questions = [
+      {question_id: 1, title: 'Homework A', question_text: 'What is it?'},
+      {question_id: 2, title: 'Homework A', question_text: 'What is that?'},
+      {question_id: 3, title: 'Homework A', question_text: 'What there?'},
+      {question_id: 4, title: 'Homework A', question_text: 'What those?'},
+  ];
+    
+  $scope.questionText = 'Oh Yeahhhhhhh!!!'
+    
+  $scope.newQuestion = function() {
+    $scope.questions.push({
+        question_id: 5, title: 'Homework A', question_text: $scope.questionText
+    });
+  };
+
+  $scope.textChange = function() {
+    
+  }
+    
+  //console.log($stateParams.qid);
+
+}]);
+
+
+app.controller('TeacherViewController', ['$scope', function($scope) {
+  $scope.homeworks = [
+      {
+        question_id: 123, title: 'Homework A',
+        description: 'Pipat is Gay',
+        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+      },
+    {
+        question_id: 123, title: 'Homework B',
+        description: 'Pipat is Gay',
+        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+      },
+    {
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
+        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+      },
+        {
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
+        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+      },
+        {
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
+        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+      },
+        {
+        question_id: 123, title: 'Homework C',
+        description: 'Pipat is Gay',
+        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+      },
+  ];
+    
+  $scope.subjects = [
+      {
+        title: 'Math', 
+        homeworks: [
+          {
+            question_id: 123, title: 'Homework A',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          },
+        {
+            question_id: 123, title: 'Homework B',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          },
+        {
+            question_id: 123, title: 'Homework C',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          }
+        ]
+      },
+    {
+        title: 'Chem', 
+        homeworks: [
+          {
+            question_id: 123, title: 'Homework D',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          },
+        {
+            question_id: 123, title: 'Homework E',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          },
+        {
+            question_id: 123, title: 'Homework F',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          }
+        ]
+      },
+    {
+        title: 'Phys', 
+        homeworks: [
+          {
+            question_id: 123, title: 'Homework G',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          },
+        {
+            question_id: 123, title: 'Homework H',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          },
+        {
+            question_id: 123, title: 'Homework I',
+            description: 'Pipat is Gay',
+            image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
+          }
+        ]
+      }
+  ]
+  
+}]);
+
 app.controller('AnswerSubmitController', ['$scope', function($scope) {
   //$scope.list = [];
   $scope.answertext = 'hello';
@@ -49,6 +227,7 @@ app.controller('AnswerSubmitController', ['$scope', function($scope) {
       //$scope.list.push(this.text);
       //$scope.text = '';
         $scope.motherChecker = $scope.answertext
+        $scope.answerSubmited = true
         console.log($scope.motherChecker)
     
   };
@@ -56,9 +235,15 @@ app.controller('AnswerSubmitController', ['$scope', function($scope) {
   $scope.showAnswer = false;
     
   $scope.toggle = function() {
-    $scope.showAnswer = !$scope.showAnswer
+    //  $scope.answerSubmited = $scope.answerSubmited
+    $scope.showAnswer = true;//!$scope.showAnswer
     //$scope.answertext = $scope.motherChecker
   };
+    
+  $scope.answerSubmited = false;
+  $scope.closeAnswerPopUp = function() {
+    $scope.answerSubmited = false;
+  }
     
 }]);
 
@@ -71,9 +256,7 @@ app.controller('questionWithIDViewController', ['$scope', '$stateParams', functi
     question_order: $stateParams.itemId,
     question_text: 'Is Pipat Super Gayyyyyyyyyyyy ?'
     };
-
   
-    
 }]);
 
 app.controller('questionViewController', ['$scope', function($scope,  $state, $stateParams) {
@@ -184,34 +367,4 @@ app.controller('StudentViewController', ['$scope', function($scope) {
       }
   ]
   
-  $scope.items = [
-  	{
-      name: 'pizza', 
-      ingredients: ['cheese', 'tomato', 'oregano', 'salt']
-    },
-  	{
-      name: 'tortilla', 
-      ingredients: ['butter', 'salt', 'pepper', 'garlic']
-    },
-  	{
-      name: 'cake', 
-      ingredients: ['cream', 'sugar']
-    },
-  	{
-      name: 'empanada', 
-      ingredients: ['flour', 'meat', 'onion']
-    },
-  	{
-      name: 'empanada', 
-      ingredients: ['flour', 'meat', 'onion']
-    },
-  	{
-      name: 'empanada', 
-      ingredients: ['flour', 'meat', 'onion']
-    },
-  	{
-      name: 'empanada', 
-      ingredients: ['flour', 'meat', 'onion']
-    }
-  ];
 }]);
