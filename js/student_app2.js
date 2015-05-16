@@ -31,7 +31,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     .state('createhomework.questionnumber', {
         url: "/questionnumber/:questionId",
         templateUrl: "views/teacherQuestionEdit.html",
-        controller: "CreateHomeworkViewController"
+        controller: "CreateHomeworkViewByIdController"
     })
     .state('createhomework.addnewquestion', {
         url: "/createhomework/addnewquestion",
@@ -72,25 +72,36 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 });
 
-app.controller('CreateHomeworkViewByIdController', ['$scope', function($scope,  $state, $stateParams) {
+app.controller('CreateHomeworkViewByIdController', ['$scope', '$stateParams', function($scope, $stateParams) {
+  $scope.showSetting = false
   $scope.questions = [
-      {question_id: 1, title: 'Homework A', question_text: 'What is it?'},
-      {question_id: 2, title: 'Homework A', question_text: 'What is that?'},
-      {question_id: 3, title: 'Homework A', question_text: 'What there?'},
-      {question_id: 4, title: 'Homework A', question_text: 'What those?'},
+      {question_id: 1, title: 'Homework A', question_text: ''},
   ];
-    
-  $scope.questionText = 'Oh Yeahhhhhhh!!!'
-    
+    $scope.fuckyou = $scope.questionText
+  $scope.questionText =  $scope.questions[$stateParams.questionId].question_text
+  $scope.qID = parseInt($stateParams.questionId) + 1
   $scope.newQuestion = function() {
     $scope.questions.push({
-        question_id: 5, title: 'Homework A', question_text: $scope.questionText
+        question_id: 5, title: 'Homework A', question_text: ''
     });
   };
-
-  $scope.textChange = function() {
+      
+//    $scope.$watch(function($scope) {
+//      return $scope.questions.
+//          map(function(obj) {
+//            return obj.question_text
+//          });
+//}, function (newVal) {
+////        $scope.count++;
+////        $scope.msg = 'person name was changed'+ $scope.count;
+//    }, true);
     
-  }
+    $scope.messageChanged = function() {
+        $scope.fuckyou = $scope.questionText
+        $scope.questions[$stateParams.questionId].question_text = $scope.questionText
+        $scope.$apply();
+        console.log($scope.questions[$stateParams.questionId].question_text);
+    }
     
   //console.log($stateParams.qid);
 
@@ -105,12 +116,12 @@ app.controller('CreateHomeworkViewController', ['$scope', function($scope,  $sta
   ];
     
   $scope.questionText = 'Oh Yeahhhhhhh!!!'
-    
-  $scope.newQuestion = function() {
-    $scope.questions.push({
-        question_id: 5, title: 'Homework A', question_text: $scope.questionText
-    });
-  };
+
+//  $scope.newQuestion = function() {
+//    $scope.questions.push({
+//        question_id: 5, title: 'Homework A', question_text: $scope.questionText
+//    });
+//  };
 
   $scope.textChange = function() {
     
