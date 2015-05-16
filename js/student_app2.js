@@ -35,34 +35,54 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: "views/questionIdView.html",
         controller: 'questionWithIDViewController'
     })
+//    .state('dohomework.questionId.show', {
+//        url: "/questionId/:itemId/:partyLocation",
+//        templateUrl: "route1.html",
+//    })
 
 });
 
+app.controller('AnswerSubmitController', ['$scope', function($scope) {
+  //$scope.list = [];
+  $scope.answertext = 'hello';
+  $scope.submit = function() {
+      //$scope.list.push(this.text);
+      //$scope.text = '';
+        $scope.motherChecker = $scope.answertext
+        console.log($scope.motherChecker)
+    
+  };
+  $scope.motherChecker = 'This is mother checker';
+  $scope.showAnswer = false;
+    
+  $scope.toggle = function() {
+    $scope.showAnswer = !$scope.showAnswer
+    //$scope.answertext = $scope.motherChecker
+  };
+    
+}]);
+
 app.controller('questionWithIDViewController', ['$scope', '$stateParams', function($scope, $stateParams) {
-  $scope.questions = [
-      {question_id: 123, title: 'Homework A'},
-      {question_id: 123, title: 'Homework A'},
-      {question_id: 123, title: 'Homework A'},
-      {question_id: 123, title: 'Homework A'},
-  ];
   
   console.log($stateParams.itemId);
 
   $scope.currentquestion = {
     question_id : $stateParams.itemId,
-    question_order: 1,
+    question_order: $stateParams.itemId,
     question_text: 'Is Pipat Super Gayyyyyyyyyyyy ?'
     };
+
+  
     
 }]);
 
 app.controller('questionViewController', ['$scope', function($scope,  $state, $stateParams) {
   $scope.questions = [
-      {question_id: 123, title: 'Homework A'},
-      {question_id: 123, title: 'Homework A'},
-      {question_id: 123, title: 'Homework A'},
-      {question_id: 123, title: 'Homework A'},
-  ]
+      {question_id: 1, title: 'Homework A', question_text: 'What is it?'},
+      {question_id: 2, title: 'Homework A', question_text: 'What is that?'},
+      {question_id: 3, title: 'Homework A', question_text: 'What there?'},
+      {question_id: 4, title: 'Homework A', question_text: 'What those?'},
+  ];
   //console.log($stateParams.qid);
 
 }]);
