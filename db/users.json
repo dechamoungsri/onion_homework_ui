@@ -1,0 +1,102 @@
+[
+  {
+    "uid": "55576b6381778f5598ca79f3",
+    "uname": "u_Byrd",
+    "guid": "6441c053-b2f8-4ac8-9094-ae8071adc7dd",
+    "isTeacher": false,
+    "name": {
+      "first": "Josephine",
+      "last": "Townsend"
+    }
+  },
+  {
+    "uid": "55576b633ab10a7272b3ac23",
+    "uname": "u_Frieda",
+    "guid": "ddc60d07-6f3d-4dcb-8a85-8080f9c25592",
+    "isTeacher": false,
+    "name": {
+      "first": "Cole",
+      "last": "Pearson"
+    }
+  },
+  {
+    "uid": "55576b6316fc4a81b549ce09",
+    "uname": "u_Silvia",
+    "guid": "5d0dc264-016b-4c65-ad86-0f449b3b7f60",
+    "isTeacher": true,
+    "name": {
+      "first": "Deanna",
+      "last": "Mays"
+    }
+  },
+  {
+    "uid": "55576b637c7f137371754ba2",
+    "uname": "u_Crane",
+    "guid": "6bb1e059-bfc0-49dd-a011-385e25ee7e02",
+    "isTeacher": true,
+    "name": {
+      "first": "Lolita",
+      "last": "Roberts"
+    }
+  },
+  {
+    "uid": "55576b637eb7f7c6640534b2",
+    "uname": "u_Campos",
+    "guid": "4ba387b0-66de-457c-8d82-aa6ba5925a96",
+    "isTeacher": false,
+    "name": {
+      "first": "Jenny",
+      "last": "Ward"
+    }
+  },
+  {
+    "uid": "55576b6385cdda7da23bbc10",
+    "uname": "u_Duran",
+    "guid": "d9591e4e-cec2-4756-a239-755563bb793b",
+    "isTeacher": true,
+    "name": {
+      "first": "Jeanne",
+      "last": "Lawrence"
+    }
+  },
+  {
+    "uid": "55576b63d434a6f115329196",
+    "uname": "u_Odom",
+    "guid": "fb2b589e-4704-4f1b-b890-3c1c7ff5b2f7",
+    "isTeacher": true,
+    "name": {
+      "first": "Deirdre",
+      "last": "Kinney"
+    }
+  },
+  {
+    "uid": "55576b638b5702da3d75586a",
+    "uname": "u_Holly",
+    "guid": "54bd4c3f-3978-4be1-a549-ff6c600b466a",
+    "isTeacher": true,
+    "name": {
+      "first": "Bowers",
+      "last": "Ortiz"
+    }
+  },
+  {
+    "uid": "55576b6376a86a7e7294a36c",
+    "uname": "u_Catalina",
+    "guid": "13b8d6b1-a5a8-445c-8c24-fd489fcc21ca",
+    "isTeacher": false,
+    "name": {
+      "first": "Flossie",
+      "last": "Conley"
+    }
+  },
+  {
+    "uid": "55576b6394c4270a411f9a95",
+    "uname": "u_Alberta",
+    "guid": "ae76c990-4bb1-4199-ada7-0d5429bdfacf",
+    "isTeacher": true,
+    "name": {
+      "first": "Whitaker",
+      "last": "Shannon"
+    }
+  }
+]

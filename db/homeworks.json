@@ -1,0 +1,59 @@
+[
+  {
+    "homework_id": "5557712a828b2754801ae61b",
+    "subject_id": "5557712afa417b15f08a32a0",
+    "homework_name": "Assignment 1",
+    "assigned_groups": [
+      {
+        "guid": "2bee454b-d231-430c-b4e3-f798d99eeb0c",
+        "due_date": "Sun Aug 16 1998 05:49:09 GMT+0000 (UTC)"
+      },
+      {
+        "guid": "c10e9dd6-57be-44cf-be31-178d41fa1a75",
+        "due_date": "Sun Dec 15 2002 00:58:05 GMT+0000 (UTC)"
+      },
+      {
+        "guid": "24cdbeb8-7116-41e9-ab6e-29b12368198e",
+        "due_date": "Fri Jul 23 1999 11:24:51 GMT+0000 (UTC)"
+      }
+    ]
+  },
+  {
+    "homework_id": "5557712a2f45632764d513dc",
+    "subject_id": "5557712aee9b2e0ac8ef19b2",
+    "homework_name": "Assignment 2",
+    "assigned_groups": [
+      {
+        "guid": "8a4dd4a8-a520-45ef-8b9a-d05637c54cfe",
+        "due_date": "Sun Mar 13 1983 10:32:03 GMT+0000 (UTC)"
+      },
+      {
+        "guid": "b2321141-7e11-411f-b743-bc180241854d",
+        "due_date": "Sun Jun 16 2002 20:22:57 GMT+0000 (UTC)"
+      }
+    ]
+  },
+  {
+    "homework_id": "5557712a114c256b77284fb7",
+    "subject_id": "5557712ae6e052ac1bae758b",
+    "homework_name": "Assignment 3",
+    "assigned_groups": [
+      {
+        "guid": "48be340e-5820-4865-b00e-6135fe2199b3",
+        "due_date": "Thu Jun 11 1970 22:01:13 GMT+0000 (UTC)"
+      },
+      {
+        "guid": "85c316b9-6f87-4d48-b010-a302b8523ac6",
+        "due_date": "Tue Sep 18 1979 18:36:56 GMT+0000 (UTC)"
+      },
+      {
+        "guid": "34f39fdf-1f96-4087-a33c-e2562d7ad590",
+        "due_date": "Mon Jul 11 2011 10:33:24 GMT+0000 (UTC)"
+      },
+      {
+        "guid": "42a1d7a2-1e01-49f6-984b-8c667dbb6078",
+        "due_date": "Wed Feb 21 1979 00:47:32 GMT+0000 (UTC)"
+      }
+    ]
+  }
+]
