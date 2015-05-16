@@ -253,7 +253,7 @@ app.controller('questionViewController', ['$scope', function($scope,  $state, $s
 }]);
 
 app.controller('StudentViewController', ['$scope','$http', function($scope, $http) {
-  $http.get("data/homeworks.js").success(function(data) {
+  $http.get("data/homeworks.json").success(function(data) {
      $scope.homeworks = data;
      console.log(data);
   });
