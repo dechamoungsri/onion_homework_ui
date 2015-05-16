@@ -121,39 +121,10 @@ app.controller('CreateHomeworkViewController', ['$scope', function($scope,  $sta
 }]);
 
 
-app.controller('TeacherViewController', ['$scope', function($scope) {
-  $scope.homeworks = [
-      {
-        question_id: 123, title: 'Homework A',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-    {
-        question_id: 123, title: 'Homework B',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-    {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-        {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-        {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-        {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-  ];
+app.controller('TeacherViewController', ['$scope','$http', function($scope,$http) {
+  $http.get('data/homeworks.json').success(function(data) {
+     $scope.homeworks = data;
+  });
     
   $scope.subjects = [
       {
@@ -270,39 +241,11 @@ app.controller('questionViewController', ['$scope', function($scope,  $state, $s
 
 }]);
 
-app.controller('StudentViewController', ['$scope', function($scope) {
-  $scope.homeworks = [
-      {
-        question_id: 123, title: 'Homework A',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-    {
-        question_id: 123, title: 'Homework B',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-    {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-        {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-        {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-        {
-        question_id: 123, title: 'Homework C',
-        description: 'Pipat is Gay',
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
-      },
-  ];
+app.controller('StudentViewController', ['$scope','$http', function($scope, $http) {
+  $http.get("data/homeworks.js").success(function(data) {
+     $scope.homeworks = data;
+     console.log(data);
+  });
     
   $scope.subjects = [
       {
