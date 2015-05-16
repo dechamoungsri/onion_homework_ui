@@ -1,26 +1,5 @@
 var app = angular.module('expensesApp', ['ngRoute'])
 
-//helper
-var myHelpers = {
-  //from http://stackoverflow.com/questions/2280104/convert-javascript-to-date-object-to-mysql-date-format-yyyy-mm-dd
-  dateObjToString: function(dateObj) {
-    var year, month, day;
-    year = String(dateObj.getFullYear());
-    month = String(dateObj.getMonth() + 1);
-    if (month.length == 1) {
-        month = "0" + month;
-    }
-    day = String(dateObj.getDate());
-    if (day.length == 1) {
-        day = "0" + day;
-    }
-    return year + "-" + month + "-" + day;
-  },
-  stringToDateObj: function(string) {
-    return new Date(string.substring(0,4), string.substring(5,7) - 1, string.substring(8,10));
-  }
-};
-
 //define routes for the app, each route defines a template and a controller
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider
@@ -44,6 +23,27 @@ app.config(['$routeProvider', function($routeProvider){
       redirectTo: '/'
     });
 }]);
+
+//helper
+var myHelpers = {
+  //from http://stackoverflow.com/questions/2280104/convert-javascript-to-date-object-to-mysql-date-format-yyyy-mm-dd
+  dateObjToString: function(dateObj) {
+    var year, month, day;
+    year = String(dateObj.getFullYear());
+    month = String(dateObj.getMonth() + 1);
+    if (month.length == 1) {
+        month = "0" + month;
+    }
+    day = String(dateObj.getDate());
+    if (day.length == 1) {
+        day = "0" + day;
+    }
+    return year + "-" + month + "-" + day;
+  },
+  stringToDateObj: function(string) {
+    return new Date(string.substring(0,4), string.substring(5,7) - 1, string.substring(8,10));
+  }
+};
 
 //this service will take care of keeping track of the expenses and other operations
 //for more on services see the documentation: https://docs.angularjs.org/guide/providers
