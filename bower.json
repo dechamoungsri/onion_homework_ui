@@ -1,0 +1,16 @@
+{
+  "name": "Tamanegi",
+  "description": "A Homework Collaborator",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dechamoungsri/onion_homework_ui/",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": "~1.3.0",
+    "angular-mocks": "~1.3.0",
+    "jquery": "1.11.0",
+    "bootstrap": "~3.2.0",
+    "angular-route": "~1.3.0",
+    "angular-ui-router-styles": "~0.0.5"
+  }
+}

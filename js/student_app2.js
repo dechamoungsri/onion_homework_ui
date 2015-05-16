@@ -1,4 +1,4 @@
-var app = angular.module('studentViewApp', ['ui.router']);
+var app = angular.module('studentViewApp', ['ui.router', 'uiRouterStyles']);
 
 app.config(function($stateProvider, $urlRouterProvider){
 
@@ -11,6 +11,14 @@ app.config(function($stateProvider, $urlRouterProvider){
 //        url: "/dohomework",
 //        templateUrl: "route1.html"
 //    }
+    .state('login', {
+        url: "/login",
+        templateUrl: "views/login.html",
+        controller: "LoginController",
+        data: {
+         css: 'http://getbootstrap.com/examples/signin/signin.css'
+        }
+    })
   
     .state('teacherhome', {
         url: "/teacherhome",
@@ -71,6 +79,10 @@ app.config(function($stateProvider, $urlRouterProvider){
 //    })
 
 });
+
+app.controller('LoginController', ['$scope', function($scope) {
+   
+}]);
 
 app.controller('CreateHomeworkViewByIdController', ['$scope', '$stateParams', function($scope, $stateParams) {
   $scope.showSetting = false
