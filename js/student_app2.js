@@ -51,32 +51,32 @@ app.controller('StudentViewController', ['$scope', function($scope) {
   $scope.homeworks = [
       {
         title: 'Homework A',
-        description: 'Pipat is Gay',
+        description: 'Gay Day',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
     {
         title: 'Homework B',
-        description: 'Pipat is Gay',
+        description: 'Gay Day',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
     {
         title: 'Homework C',
-        description: 'Pipat is Gay',
+        description: 'Gay Day',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
         {
-        title: 'Homework C',
-        description: 'Pipat is Gay',
+        title: 'Homework D',
+        description: 'Gay Day',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
         {
-        title: 'Homework C',
-        description: 'Pipat is Gay',
+        title: 'Homework E',
+        description: 'Gay Day',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
         {
-        title: 'Homework C',
-        description: 'Pipat is Gay',
+        title: 'Homework F',
+        description: 'Gay Day',
         image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
       },
   ];
@@ -87,17 +87,17 @@ app.controller('StudentViewController', ['$scope', function($scope) {
         homeworks: [
           {
             title: 'Homework A',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
             title: 'Homework B',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
             title: 'Homework C',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           }
         ]
@@ -107,17 +107,17 @@ app.controller('StudentViewController', ['$scope', function($scope) {
         homeworks: [
           {
             title: 'Homework D',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
             title: 'Homework E',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
             title: 'Homework F',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           }
         ]
@@ -127,17 +127,17 @@ app.controller('StudentViewController', ['$scope', function($scope) {
         homeworks: [
           {
             title: 'Homework G',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
             title: 'Homework H',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           },
         {
             title: 'Homework I',
-            description: 'Pipat is Gay',
+            description: 'Gay Day',
             image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiAcispLDx41n8BbRDZUntJJwZ9kqOWYHaZgkSu5KL1Zp-U9cPbQ'
           }
         ]
