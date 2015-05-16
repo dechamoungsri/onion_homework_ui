@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://getbootstrap.com/examples/dashboard/# -->
+<html ng-app="expensesApp" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Do Homework</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./Dashboard Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/test_app.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-controller="ExpensesViewController">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <!-- TODO: Fetch subject name here -->
+            <a class="navbar-brand" href="#">Maths I</a>
+            <!-- TODO: Place a breadcrumb here -->
+            <!-- <breadcrumb> -->
+            <!-- TODO: Fetch homework name here -->
+            <a class="navbar-brand" href="#">Assignment 3</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Back</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <div style="margin-bottom: 20px;">
+                    <!-- TODO: Fetch name here-->
+                    <h1 style="margin-bottom: 20px;">Decha Muangsri</h1>
+                    <img src="/images/default-profile.jpg" class="img-responsive img-circle" />
+                </div>
+                <ul class="nav nav-sidebar">
+                <!-- TODO: Insert Questions Here -->
+                <li class="active">
+                    <a href="#">
+                        Q1. What is it?
+                    <span class="sr-only">(current)</span>
+                    <!-- TODO: Reflect real grading -->
+                    <span class="badge">X</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Q2. What is that?
+                        <!-- TODO: Reflect real grading -->
+                        <span class="badge">X</span>
+                    </a>
+                  </li>
+                <li><a href="#">Q3. What are those?</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <!-- TODO: Place question content here-->
+                <h1 class="page-header" style="font-size: 6rem;">Q1. What is it?</h1>
+                <blockquote style="width: 100%">
+                    <p><span style="text-align: justified; font-size: 4rem; color: #777777">
+                        It's a bird. <br /> 
+                        No, it's a plane. <br /> 
+                        No, It's Super man!
+                    </span></p>
+                </blockquote>
+                <!-- TODO: Reflect real grading -->
+                <div class="alert alert-danger placeholders">
+                    <strong>Marked as wrong</strong>
+                </div>
+                <div class="row placeholders">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-lg-12 col-lg-offset-2">
+                                    <input type="button" class="btn btn-success" value="√" />
+                                    <input type="button" class="btn btn-warning" value="X" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="row placeholders">
+                    <form class="form-horizontal" style="margin-bottom: 10px;">
+                        <fieldset>
+                            <h2 class="page-header"><span style="font-size: 4rem;">Comment</span></h2>
+                            <textarea placeholder="Your comment here" rows="4" style="width: 100%; font-size: 2rem;"></textarea>
+                            <input type="button" class="btn btn-info btn-lg btn-block" value="Save comment" />
+                        </fieldset>
+                    </form>
+                    <div class="alert alert-dismissible alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Comment has been saved</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Dashboard Template for Bootstrap_files/jquery.min.js"></script>
+    <script src="./Dashboard Template for Bootstrap_files/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="./Dashboard Template for Bootstrap_files/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./Dashboard Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
+  
+
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" preserveAspectRatio="none" style="visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs></defs><text x="0" y="10" style="font-weight:bold;font-size:10pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle">200x200</text></svg></body></html>
