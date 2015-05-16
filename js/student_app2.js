@@ -1,4 +1,4 @@
-var app = angular.module('studentViewApp', ['ui.router'])
+var app = angular.module('studentViewApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider){
 
@@ -36,21 +36,24 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'questionWithIDViewController'
     })
 
-})
+});
 
-app.controller('questionWithIDViewController', ['$scope', function($scope,  $state, $stateParams) {
+app.controller('questionWithIDViewController', ['$scope', '$stateParams', function($scope, $stateParams) {
   $scope.questions = [
       {question_id: 123, title: 'Homework A'},
       {question_id: 123, title: 'Homework A'},
       {question_id: 123, title: 'Homework A'},
       {question_id: 123, title: 'Homework A'},
-  ]
+  ];
   
-  if($stateParams.itemId) {
-    console.log($stateParams.itemId);
-  }
+  console.log($stateParams.itemId);
 
-
+  $scope.currentquestion = {
+    question_id : $stateParams.itemId,
+    question_order: 1,
+    question_text: 'Is Pipat Super Gayyyyyyyyyyyy ?'
+    };
+    
 }]);
 
 app.controller('questionViewController', ['$scope', function($scope,  $state, $stateParams) {
