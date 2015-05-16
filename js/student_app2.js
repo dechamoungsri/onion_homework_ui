@@ -27,57 +27,41 @@ app.config(function($stateProvider, $urlRouterProvider){
       })  
     .state('dohomework', {
         url: "/dohomework",
-        templateUrl: "route1.html",
-        controller: 'StudentViewController'
+        templateUrl: "views/dohomework.html",
+        controller: 'questionViewController'
     })
-    .state('dohomework.questionList', {
-        url: "/questionList",
-        templateUrl: "route1.html"
+    .state('dohomework.questionId', {
+        url: "/questionId/:itemId",
+        templateUrl: "views/questionIdView.html",
+        controller: 'questionWithIDViewController'
     })
 
-//    .state('dohomework.studentDate', {
-//          url: "/studentDate",
-//          templateUrl: "views/studentViewSortedByDate.html",
-//          controller: 'StudentViewController'
-//      })
-//    .state('dohomework.studentSubject', {
-//          url: "/studentSubject",
-//          templateUrl: "views/studentViewBySubject.html",
-//          controller: 'StudentViewController'
-//      })  
-  
-//    .state('route1', {
-//        url: "/route1",
-//        templateUrl: "route1.html"
-//    })
-//      .state('route1.list', {
-//          url: "/list",
-//          templateUrl: "route1.list.html",
-//          controller: function($scope){
-//            $scope.items = ["A", "List", "Of", "Items"];
-//          }
-//      })
-//
-//    .state('route2', {
-//        url: "/route2",
-//        templateUrl: "route2.html"
-//    })
-//      .state('route2.list', {
-//          url: "/list",
-//          templateUrl: "route2.list.html",
-//          controller: function($scope){
-//            $scope.things = ["A", "Set", "Of", "Things"];
-//          }
-//      })
 })
 
-app.controller('StudentViewController', ['$scope', function($scope) {
+app.controller('questionWithIDViewController', ['$scope', function($scope,  $state, $stateParams) {
   $scope.questions = [
       {question_id: 123, title: 'Homework A'},
       {question_id: 123, title: 'Homework A'},
       {question_id: 123, title: 'Homework A'},
       {question_id: 123, title: 'Homework A'},
   ]
+  
+  if($stateParams.itemId) {
+    console.log($stateParams.itemId);
+  }
+
+
+}]);
+
+app.controller('questionViewController', ['$scope', function($scope,  $state, $stateParams) {
+  $scope.questions = [
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+      {question_id: 123, title: 'Homework A'},
+  ]
+  //console.log($stateParams.qid);
+
 }]);
 
 app.controller('StudentViewController', ['$scope', function($scope) {
