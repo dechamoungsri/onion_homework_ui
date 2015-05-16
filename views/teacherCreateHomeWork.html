@@ -2,17 +2,19 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         
-                        <li data-ng-repeat="question in questions track by $index"><a ui-sref="createhomework.questionnumber({questionId:$index})">Q.{{question.question_id}} {{question.question_text}}</a>
+                        <!-- <li data-ng-repeat="question in questions track by $index"><a ui-sref="createhomework.questionnumber({questionId:$index})">Q.{{question.question_id}} {{question.question_text}}</a>
+                        </li> -->
+                        <li data-ng-repeat="question in questions track by $index"><a ui-sref="createhomework.questionnumber({questionId:$index})">Q.{{question.question_id}} Why did the decision of ...</a>
                         </li>
-
                     </ul>
                     
-                    <button type="button" ng-click="newQuestion()" class="btn">+</button>
+                    <button type="button" ng-click="newQuestion()" class="btn btn-link btn-lg btn-block">+</button>
                     
                     <!-- TODO: Push these buttons to bottom -->
-                    <ul class="nav nav-sidebar" style="margin-top: 0;">
-                        <li><button ng-click="showSetting=true" type="button" class="btn btn-default btn-lg btn-block">Settings</button></li>
-                        <li><a href="#" class="btn btn-default btn-lg btn-block">Submit</a></li>
+                    <hr />
+                    <ul class="nav nav-sidebar">
+                        <li><button ng-click="showSetting=true" type="button" class="btn btn-link btn-lg btn-block">Settings</button></li>
+                        <li><button href="#" class="btn btn-primary btn-lg btn-block">Submit</button></li>
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="top: 32%;">
@@ -37,8 +39,8 @@
                         <h2>Due date</h2>                        
                         <hr />
                         <!-- TODO: Automatically add more due date inputs-->
-                        <div class="">
-                            <div class="">
+                        <div class="row placeholders">
+                            <div class="col-xs-6">
                                 <h3>Class</h3>
                                 <select class="form-control">
                                     <!-- TODO: Fetch class list here -->
@@ -49,7 +51,7 @@
                                     <option>4/5</option>
                                 </select>
                             </div>
-                            <div class="">
+                            <div class="col-xs-6">
                                 <h3>Due date</h3>
                                 <select class="form-control">
                                     <!-- TODO: Use real date selector -->
@@ -57,6 +59,11 @@
                                     <option>Day after tomorrow</option>
                                     <option>Next week</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row placeholders">
+                            <div class="col-xs-12">
+                                <input type="button" class="btn btn-link btn-lg btn-block" value="+ Add more class" ></input>
                             </div>
                         </div>
                     </form>

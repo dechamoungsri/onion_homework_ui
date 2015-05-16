@@ -47,6 +47,16 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: "CreateHomeworkViewController"
     })
   
+    .state('checkhomework', {
+        url: "/checkhomework",
+        templateUrl: "views/teacherCheckHomework.html",
+        controller: "QuestionCheckIdController"
+    })
+    .state('checkhomework.questionnumber', {
+        url: "/questionnumber/:questionId",
+        templateUrl: "views/teacherCheckHomeworkDetail.html",
+        controller: "QuestionCheckIdController"
+    })
   
   // Student View Call here
     .state('studenthome', {
@@ -81,7 +91,27 @@ app.config(function($stateProvider, $urlRouterProvider){
 });
 
 app.controller('LoginController', ['$scope', function($scope) {
+}]);
    
+app.controller('QuestionCheckIdController', ['$scope', '$stateParams', '$http' ,function($scope, $stateParams, $http) {
+  $scope.questionObject = {question_id: 1, title: 'Homework A', question_text: 'What is it?'};
+  $http.get("data/homeworks.json").success(function(data) {
+     $scope.questions = data;
+     console.log(data);
+  });
+  if ($stateParams.questionId){
+    $scope.qID = parseInt($stateParams.questionId) - 1 
+    console.log($scope.qID);
+    $scope.questionObject = $scope.questions[$scope.qID];
+  }
+  
+  if ($scope.questions) {
+     $http.get("db/answers.json").success(function(data) {
+     $scope.answers = data;
+     
+     console.log(data);
+  });
+  }
 }]);
 
 app.controller('CreateHomeworkViewByIdController', ['$scope', '$stateParams', function($scope, $stateParams) {
@@ -242,8 +272,8 @@ app.controller('AnswerSubmitController', ['$scope', function($scope) {
 }]);
 
 app.controller('questionWithIDViewController', ['$scope', '$stateParams', function($scope, $stateParams) {
-  
-  console.log($stateParams.itemId);
+//  
+//  console.log($stateParams.itemId);
 
   $scope.currentquestion = {
     question_id : $stateParams.itemId,
