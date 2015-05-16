@@ -95,12 +95,12 @@ app.controller('QuestionCheckIdController', ['$scope', '$stateParams', '$http' ,
   }
   
   if ($scope.questions) {
-    
+     $http.get("db/answers.json").success(function(data) {
+     $scope.answers = data;
+     
+     console.log(data);
+  });
   }
-    
-//  else {
-//    $scope.questionObject = $scope.questions[0];
-//  }
 }]);
 
 app.controller('CreateHomeworkViewByIdController', ['$scope', '$stateParams', function($scope, $stateParams) {
